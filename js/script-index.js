@@ -15,23 +15,28 @@ $(document).ready( function(){
 
 function renderHighlightedRecipes(recipesArray) {
   console.log('Recipes: ', recipesArray);
-  for (var i in recipesArray) {
-    if (recipesArray[i]['highlighted'] === true) {
-      renderRecipe();
+  for (var i = 0; i < recipesArray.length; i++) {
+    recipesArray[i];
+    if (recipesArray[i].highlighted === true) {
+      renderRecipe(recipesArray[i]);
     }
   }
 }
 
 
 /*
-* Función que se encarga de pintar UNA recetas que tenga 
+* Función que se encarga de pintar UNA recetas que tenga
 * marcado el atributo "highlighted" como TRUE
-* Aqui se tiene que crear el HTML que esta en el 
+* Aqui se tiene que crear el HTML que esta en el
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe(recipe) {
   console.log('Voy a pintar la receta: ', recipe);
+  $('.list-recipes').append('<a class="item-recipe" href="#"> <span class="attribution"> <span class="title-recipe">' + recipe.title +' </span> <span class="metadata-recipe"> <span class="author-recipe">' + recipe.source.name +' </span> <span class="bookmarks-recipe"> <span class="icon-bookmark"> </span> </span> </span> </span> <img src="img/recipes/320x350/' + recipe.name +'.jpg"></a>');
 }
+
+
+
 
 
 
