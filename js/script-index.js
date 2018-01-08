@@ -42,4 +42,5 @@ function renderActivity(recipe) {
 	
 }
 
+$('.js-back').hide();
 
