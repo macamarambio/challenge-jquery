@@ -1,9 +1,16 @@
 $(document).ready( function(){
 
+  //eliminando flecha
+  $('.js-back').hide();
+
+
   //La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
   renderHighlightedRecipes(recipesArray);
 
+//agregar titulo
   printNews();
+
+  renderActivities(activitiesArray);
 
 });
 
@@ -38,14 +45,20 @@ function renderRecipe(recipe) {
 
 
 
-
-
 /*
 * Función que se encarga de pintar todas las actividades
 */
 function renderActivities(activitiesArray) {
   console.log('Activities: ', activitiesArray);
+  for (var i = 0; i < activitiesArray.length; i++) {
+    renderActivity(activitiesArray[i]);
+  }
+    if(activitiesArray.length > 0) {
+      $('.wrapper-message').hide();
+      console.log(hola)
+    }
 }
+
 
 /*
 * Función que se encarga de pintar una actividad
@@ -56,7 +69,7 @@ function renderActivity(recipe) {
   
 }
 
-$('.js-back').hide();
+
 
 function printNews(){
   $('#container-news').text('NUEVAS RECETAS');
